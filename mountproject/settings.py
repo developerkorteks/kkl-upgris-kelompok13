@@ -30,12 +30,12 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost',
     'https://deployproject-production-e7b4.up.railway.app',
     'https://mountrent.my.id',
-    'kkl-upgris-kelompok13.domcloud.dev'
+    'https://kkl-upgris-kelompok13.domcloud.dev'
 ]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*","deployproject-production-e7b4.up.railway.app", "mountrent.my.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*","deployproject-production-e7b4.up.railway.app", "mountrent.my.id", "kkl-upgris-kelompok13.domcloud.dev"]
 
 
 # Application definition
