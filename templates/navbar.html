@@ -69,83 +69,83 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="text-slate-300 font-semibold text-lg mt-4 mb-2">🏪 Mitra</div>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="{% url 'accounts:register_mitra' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Daftar Mitra</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'accounts:login_mitra' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Login Mitra</a>
-                                </li>
-                            </ul>
-                        </div>
-                    {% endif %}
-                    {% if user.is_authenticated and user.role == 'mitra' %}
-                        <div>
-                            <div class="text-slate-300 font-semibold text-lg mb-2">🏪 Menu Mitra</div>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="{% url 'toko:dashboard_mitra' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Dashboard Mitra</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'toko:tambah_produk' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">➕ Tambah Produk</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-slate-300 font-semibold text-lg mt-4 mb-2">🧭 Eksplor</div>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="{% url 'gunung:daftar' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Gunung</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'toko:toko_leaflet_page' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Rent</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'feedback:list' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">💬 Feedback</a>
-                                </li>
-                            </ul>
-                        </div>
-                    {% elif user.is_authenticated and user.role == 'user' %}
-                        <div>
-                            <div class="text-slate-300 font-semibold text-lg mb-2">🧭 Menu Eksplore</div>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="{% url 'gunung:daftar' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplore Destination</a>
-                                </li>
-                                <!-- <li> -->
-                                <!--     <a href="{% url 'toko:toko_leaflet_page' %}" -->
-                                <!--        class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Rent</a> -->
-                                <!-- </li> -->
-                                <li>
-                                    <a href="{% url 'feedback:list' %}"
-                                       class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">💬 Feedback</a>
-                                </li>
-                            </ul>
-                        </div>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <div class="pt-5 mt-5 border-t border-slate-700">
-                            <a href="{% url 'accounts:logout' %}"
-                               class="block w-full text-center font-semibold bg-red-600/80 text-white px-4 py-2.5 rounded-lg hover:bg-red-600 transition-colors">
-                                Logout
-                            </a>
-                        </div>
-                    {% endif %}
+                            <!--     <div class="text-slate-300 font-semibold text-lg mt-4 mb-2">🏪 Mitra</div> -->
+                            <!--     <ul class="space-y-2"> -->
+                            <!--         <li> -->
+                            <!--             <a href="{% url 'accounts:register_mitra' %}" -->
+                            <!--                class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Daftar Mitra</a> -->
+                            <!--         </li> -->
+                            <!--         <li> -->
+                            <!--             <a href="{% url 'accounts:login_mitra' %}" -->
+                            <!--                class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Login Mitra</a> -->
+                            <!--         </li> -->
+                            <!--     </ul> -->
+                            <!-- </div> -->
+                        {% endif %}
+                        {% if user.is_authenticated and user.role == 'mitra' %}
+                            <div>
+                                <div class="text-slate-300 font-semibold text-lg mb-2">🏪 Menu Mitra</div>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="{% url 'toko:dashboard_mitra' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Dashboard Mitra</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'toko:tambah_produk' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">➕ Tambah Produk</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="text-slate-300 font-semibold text-lg mt-4 mb-2">🧭 Eksplor</div>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="{% url 'gunung:daftar' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Gunung</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'toko:toko_leaflet_page' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Rent</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'feedback:list' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">💬 Feedback</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% elif user.is_authenticated and user.role == 'user' %}
+                            <div>
+                                <div class="text-slate-300 font-semibold text-lg mb-2">🧭 Menu Eksplore</div>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="{% url 'gunung:daftar' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplore Destination</a>
+                                    </li>
+                                    <!-- <li> -->
+                                    <!--     <a href="{% url 'toko:toko_leaflet_page' %}" -->
+                                    <!--        class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">Eksplor Rent</a> -->
+                                    <!-- </li> -->
+                                    <li>
+                                        <a href="{% url 'feedback:list' %}"
+                                           class="block px-4 py-2.5 bg-slate-700/50 rounded-xl hover:bg-slate-700/80 text-slate-100 transition-colors">💬 Feedback</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <div class="pt-5 mt-5 border-t border-slate-700">
+                                <a href="{% url 'accounts:logout' %}"
+                                   class="block w-full text-center font-semibold bg-red-600/80 text-white px-4 py-2.5 rounded-lg hover:bg-red-600 transition-colors">
+                                    Logout
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
-<style>
+    </nav>
+    <style>
     body { padding-top: 5.5rem; } /* Sesuaikan tinggi padding jika perlu */
     [x-cloak] { display: none !important; }
-</style>
+    </style>
