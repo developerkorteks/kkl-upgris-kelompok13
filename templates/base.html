@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {% block title %}KklUpgris{% endblock %}
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'src/output.css' %}" />
+        <link rel="stylesheet"
+              href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script defer src="https://unpkg.com/alpinejs@3.12.0/dist/cdn.min.js"></script>
+        <style>
+            body { font-family: 'Nunito Sans', sans-serif; }
+            [x-cloak] { display: none !important; }
+            
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+        </style>
+        {% block extra_styles %}{% endblock %}
+    </head>
+    <body x-data="{ scrolled: window.pageYOffset > 50 }"
+          @scroll.window="scrolled = (window.pageYOffset > 50)"
+          class="bg-slate-900 text-slate-800 flex flex-col min-h-screen">
+        <div style="display:none;">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254239/3_llunqd.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758251417/WhatsApp_Image_2025-09-12_at_12.23.57_AM_v0b6rd.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254216/4_uytl9n.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254206/2_eke6fq.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254205/1_ggr48v.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254198/7_cwxacv.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254177/6_nwyzrw.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254172/5_f5s50x.jpg">
+            <img src="https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254159/8_xpme2x.jpg">
+        </div>
+        <div class="fixed top-0 left-0 w-full h-full -z-10"
+             x-data="{ currentSlide: 0, slides: [ 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254239/3_llunqd.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758251417/WhatsApp_Image_2025-09-12_at_12.23.57_AM_v0b6rd.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254216/4_uytl9n.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254206/2_eke6fq.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254205/1_ggr48v.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254198/7_cwxacv.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254177/6_nwyzrw.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254172/5_f5s50x.jpg', 'https://res.cloudinary.com/dsqshxwzj/image/upload/v1758254159/8_xpme2x.jpg' ] }"
+             x-init="setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 6000)">
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[0]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 0, 'opacity-0': currentSlide !== 0 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[1]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 1, 'opacity-0': currentSlide !== 1 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[2]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 2, 'opacity-0': currentSlide !== 2 }"></div>
+            <!-- Slide tambahan -->
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[3]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 3, 'opacity-0': currentSlide !== 3 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[4]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 4, 'opacity-0': currentSlide !== 4 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[5]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 5, 'opacity-0': currentSlide !== 5 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[6]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 6, 'opacity-0': currentSlide !== 6 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[7]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 7, 'opacity-0': currentSlide !== 7 }"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-3000 ease-in-out"
+                 :style="{ 'background-image': `url('${slides[8]}')` }"
+                 :class="{ 'opacity-100': currentSlide === 8, 'opacity-0': currentSlide !== 8 }"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        </div>
+        {% include "navbar.html" %}
+        <main class="flex-grow">
+            {% block hero_content %}
+                <div class="relative z-20 flex flex-col justify-center items-center text-white text-center min-h-screen pt-28 pb-12 px-6">
+                    <h1 class="text-4xl font-bold">Jelajahi Dunia, Mulai Dari Sini</h1>
+                </div>
+            {% endblock hero_content %}
+            {% block content %}{% endblock %}
+        </main>
+        {% include "footer.html" %}
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        {% block extra_scripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Akun Menunggu Verifikasi - MountInfo{% endblock %}
+{# Kosongkan hero block agar halaman langsung menampilkan panel di tengah #}
+{% block hero_content %}
+{% endblock hero_content %}
+{% block content %}
+    <div class="w-full min-h-screen flex items-center justify-center pt-20 pb-16 px-4">
+        <div class="w-full max-w-lg bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-8 md:p-10 text-center">
+            <div class="flex flex-col items-center justify-center">
+                <div class="bg-yellow-500/20 p-4 rounded-full border-2 border-yellow-500/30">
+                    <svg class="h-12 w-12 text-yellow-300 animate-pulse"
+                         xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white mt-6">Akun Anda Menunggu Verifikasi</h2>
+            </div>
+            <p class="text-center text-slate-300 leading-relaxed mt-4">
+                Terima kasih telah mendaftar sebagai <span class="font-semibold text-white">Mitra</span> di MountInfo!
+                <br>
+                Untuk mengaktifkan akun, silakan selesaikan pembayaran dan konfirmasi ke admin.
+            </p>
+            <div class="mt-8 bg-slate-800/50 border border-slate-700 rounded-xl p-5 text-left text-sm space-y-3">
+                <div class="flex items-start gap-3">
+                    <span class="text-slate-400 mt-0.5">💳</span>
+                    <div>
+                        <p class="font-medium text-slate-400">Biaya Pendaftaran</p>
+                        <p class="font-bold text-lg text-white">Rp 50.000</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-slate-400 mt-0.5">🏦</span>
+                    <div>
+                        <p class="font-medium text-slate-400">Transfer ke Rekening</p>
+                        <p class="font-bold text-white">BCA 1234567890 (a.n. Admin MountInfo)</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-slate-400 mt-0.5">📸</span>
+                    <div>
+                        <p class="font-medium text-slate-400">Konfirmasi Pembayaran</p>
+                        <p class="font-bold text-white">Kirim bukti transfer ke Admin via WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row-reverse gap-4">
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20Saya%20ingin%20mengaktifkan%20akun%20mitra%20MountInfo%20dan%20sudah%20melakukan%20pembayaran."
+                   target="_blank"
+                   class="flex-1 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300 hover:shadow-green-500/50">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52s-.67-.816-.916-.966c-.247-.149-.494-.15-.67-.15-.177 0-.375-.025-.574-.025-.198 0-.523.074-.79.372-.267.297-1.03.996-1.03 2.436 0 1.44 1.055 2.823 1.203 3.02.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.075 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    </svg>
+                    Hubungi Admin
+                </a>
+                <a href="{% url 'gunung:home' %}"
+                   class="flex-1 inline-flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-medium px-6 py-3 rounded-lg transition duration-300">
+                    Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
